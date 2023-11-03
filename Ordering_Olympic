@@ -1,0 +1,15 @@
+countries = []
+
+end = False
+while end is False:
+    country = input("Country: ")
+    if not country:
+        break
+    countries.append(country)
+
+countries.sort()
+print("Greece")
+for country in countries:
+    print(country)
+print("Refugee Olympic Team")
+print("Japan")
