@@ -1,0 +1,36 @@
+class iFridge:
+    def __init__(self):
+        self.ingredients = {}
+
+    def set_ingredient(self, ingredient, quantity):
+        if ingredient in self.ingredients:
+            self.ingredients[ingredient] += quantity
+        else:
+            self.ingredients[ingredient] = quantity
+
+    def query_ingredient(self, ingredient):
+        if ingredient in self.ingredients:
+            print(f"You have {self.ingredients[ingredient]} {ingredient}(s) in the fridge.")
+        else:
+            print(f" You have no {ingredient}(s) in the fridge.")
+
+fridge = iFridge()
+
+while True:
+    command = input("Fridge command: ").strip()
+
+    if not command:
+        break
+
+    words = command.split()
+    if len(words) == 0:
+        continue
+
+    if words[0].lower() == 'set' and len(words) == 3:
+        ingredient, quantity = words[1], int(words[2])
+        fridge.set_ingredient(ingredient, quantity)
+    elif words[0].lower() == 'query' and len(words) == 2:
+        ingredient = words[1]
+        fridge.query_ingredient(ingredient)
+    else:
+        print("Write the command correctly you twat")
