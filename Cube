@@ -1,0 +1,16 @@
+import math
+def cube(lim):
+    num = 1
+    while num ** 3 <= lim:
+        print(num ** 3)
+        num += 1
+
+# Get user input for the limit
+max = int(input("Max: "))
+
+# Print the sequence of cubed numbers
+cube(max)
+
+
+
+
